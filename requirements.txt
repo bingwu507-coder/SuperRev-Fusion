@@ -1,0 +1,38 @@
+Requirements
+# Medical Image Fusion with asdi and LWD-LIB Architecture
+#
+# Installation:
+#   pip install -r requirements.txt
+#
+# Note: For CUDA support, install PyTorch from https://pytorch.org/
+#   Example (CUDA 11.8):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+
+# ==================== Core Dependencies ====================
+
+# Deep Learning Framework (required)
+torch>=1.10.0
+torchvision>=0.11.0
+
+# Image Processing (required)
+Pillow>=8.0.0
+numpy>=1.21.0
+
+# ==================== Data Utilities ====================
+
+# Natural sorting for file matching (required)
+natsort>=7.0.0
+
+# ==================== ASDI Super-Resolution (optional) ====================
+
+# ASDI MRI Super-Resolution module
+# Install from source or local package
+# asdi_mri_sr>=1.0.0
+
+# ==================== Training & Logging (optional) ====================
+
+# TensorBoard logging (optional, for training visualization)
+tensorboardX>=2.4
+
+# Matplotlib plotting (optional, for loss curves)
+matplotlib>=3.4.0
