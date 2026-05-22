@@ -1,4 +1,4 @@
-"""DDIM sampler for the reconstructed ASDI module."""
+
 
 from __future__ import annotations
 
@@ -7,15 +7,6 @@ import torch.nn.functional as F
 
 
 class AnalyticalASDIEstimator:
-    """Weight-free structural noise estimator for executable public inference.
-
-    This estimator keeps the manuscript's eps_theta(z_t, t, c) interface. It
-    predicts the clean latent image from the Pixel-Unshuffle condition and a
-    lightweight structural enhancement prior, then converts that clean estimate
-    into the equivalent DDIM noise residual. This mode is deterministic and
-    intended for reviewer-side execution when the original learned ASDI weights
-    are unavailable.
-    """
 
     def __call__(
         self,
@@ -73,8 +64,6 @@ class DDIMSampler:
         self.to(device)
 
         if deterministic_start:
-            # Starting from the conditional latent keeps inference stable for
-            # MRI preprocessing and avoids hallucination-prone random outputs.
             z_t = condition.clone()
         else:
             z_t = torch.randn_like(condition)
