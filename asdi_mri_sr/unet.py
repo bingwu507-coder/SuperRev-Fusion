@@ -1,13 +1,4 @@
-"""Lightweight conditional U-Net used for ASDI noise estimation.
 
-The network follows the manuscript interface:
-
-    eps_theta(z_t, t, c) = UNet_theta(z_t, Concat(z_t, c))
-
-The class can load trained weights when available. For public executable
-inference without the original weights, the ASDI sampler can instead use the
-analytical structural estimator implemented in ddim_sampler.py.
-"""
 
 from __future__ import annotations
 
